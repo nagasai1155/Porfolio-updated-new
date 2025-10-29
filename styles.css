@@ -30,6 +30,9 @@ body.light-mode {
     --card-bg: #ffffff;
     --text-primary: #1a1a1a;
     --text-secondary: #4a4a4a;
+    /* Orange accent inspired by Postman */
+    --primary-purple: #FF6C37; /* used widely as first gradient stop */
+    --primary-pink: #FF8A50;   /* used widely as second gradient stop */
     background: #ffffff;
         }
 
@@ -96,6 +99,156 @@ body.light-mode nav.scrolled {
     background: #ffffff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Light mode orange accent overrides (Postman-inspired) */
+body.light-mode .theme-toggle:hover {
+    background: rgba(255, 108, 55, 0.15);
+    border-color: rgba(255, 108, 55, 0.35);
+}
+
+body.light-mode .btn-secondary {
+    border: 2px solid rgba(255, 108, 55, 0.5);
+}
+
+body.light-mode .btn-secondary:hover {
+    background: rgba(255, 108, 55, 0.1);
+    border-color: rgba(255, 108, 55, 0.8);
+}
+
+body.light-mode .status-badge {
+    background: rgba(255, 108, 55, 0.15);
+    border: 1px solid rgba(255, 108, 55, 0.35);
+}
+
+body.light-mode .social-links a {
+    background: rgba(255, 108, 55, 0.12);
+    border: 1px solid rgba(255, 108, 55, 0.28);
+}
+
+body.light-mode .social-links a:hover {
+    background: rgba(255, 108, 55, 0.22);
+    border-color: rgba(255, 108, 55, 0.5);
+    box-shadow: 0 5px 15px rgba(255, 108, 55, 0.35);
+}
+
+body.light-mode .stat-card:hover {
+    border-color: rgba(255, 108, 55, 0.35);
+    box-shadow: 0 10px 40px rgba(255, 108, 55, 0.25);
+}
+
+body.light-mode .stat-card::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 108, 55, 0.1), transparent);
+}
+
+body.light-mode .avatar {
+    box-shadow: 0 20px 60px rgba(255, 108, 55, 0.35);
+    border: 3px solid rgba(255, 108, 55, 0.25);
+}
+
+body.light-mode .about-image {
+    box-shadow: 0 20px 60px rgba(255, 108, 55, 0.35);
+    border: 3px solid rgba(255, 108, 55, 0.25);
+}
+
+body.light-mode .skill-item::before {
+    background: linear-gradient(90deg, transparent, rgba(255, 108, 55, 0.2), transparent);
+}
+
+body.light-mode .skill-item:hover {
+    background: rgba(255, 108, 55, 0.2);
+    border-color: rgba(255, 108, 55, 0.5);
+    box-shadow: 0 8px 25px rgba(255, 108, 55, 0.3);
+}
+
+body.light-mode .experience-item:hover {
+    border-color: rgba(255, 108, 55, 0.5);
+    box-shadow: 0 10px 40px rgba(255, 108, 55, 0.3);
+}
+
+body.light-mode .experience-item::before {
+    box-shadow: 0 0 0 4px rgba(255, 108, 55, 0.3);
+}
+
+body.light-mode .project-card:hover {
+    border-color: rgba(255, 108, 55, 0.35);
+    box-shadow: 0 15px 50px rgba(255, 108, 55, 0.35);
+}
+
+body.light-mode .tech-tag {
+    background: rgba(255, 108, 55, 0.15);
+    border: 1px solid rgba(255, 108, 55, 0.35);
+}
+
+body.light-mode .tech-tag:hover {
+    background: rgba(255, 108, 55, 0.25);
+    border-color: rgba(255, 108, 55, 0.5);
+}
+
+body.light-mode .contact-item:hover {
+    background: rgba(255, 108, 55, 0.1);
+    border-color: rgba(255, 108, 55, 0.5);
+}
+
+body.light-mode .contact-item i {
+    background: rgba(255, 108, 55, 0.18);
+    border: 1px solid rgba(255, 108, 55, 0.35);
+}
+
+body.light-mode .contact-form {
+    box-shadow: 0 10px 40px rgba(255, 108, 55, 0.2);
+}
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group textarea:focus {
+    border-color: rgba(255, 108, 55, 0.8);
+    box-shadow: 0 0 0 3px rgba(255, 108, 55, 0.12);
+}
+
+body.light-mode .submit-btn {
+    box-shadow: 0 4px 15px rgba(255, 108, 55, 0.3);
+}
+
+body.light-mode .submit-btn:hover {
+    box-shadow: 0 8px 25px rgba(255, 108, 55, 0.45);
+}
+
+/* Light mode: force all text to black */
+body.light-mode {
+    --text-primary: #000000;
+    --text-secondary: #000000;
+}
+
+/* Remove gradient text fills and set to black */
+body.light-mode .logo,
+body.light-mode .highlight,
+body.light-mode .stat-icon,
+body.light-mode .stat-number,
+body.light-mode .section-title,
+body.light-mode .contact-info h3 {
+    background: none;
+    -webkit-text-fill-color: #000000;
+    color: #000000;
+}
+
+/* Links and nav links should be black, including active and hover */
+body.light-mode .nav-links a,
+body.light-mode .nav-links a:hover,
+body.light-mode .nav-links a.active {
+    color: #000000;
+}
+
+/* Underline indicator in nav should be black */
+body.light-mode .nav-links a::after {
+    background: #000000;
+}
+
+/* Specific elements that previously used accent color as text */
+body.light-mode .experience-company,
+body.light-mode .skill-percentage,
+body.light-mode .project-link,
+body.light-mode .project-link:hover {
+    color: #000000;
 }
 
         .nav-container {
