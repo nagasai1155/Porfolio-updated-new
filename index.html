@@ -1,267 +1,389 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Naga Sai Balam - Software Developer</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    
-</head>
-<body>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Particle Background -->
+    <canvas id="particleCanvas"></canvas>
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">NSB</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <a href="#contact" class="contact-btn">Contact</a>
+      <div class="nav-container">
+        <div class="logo">NSB</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+          <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+          <a href="#contact" class="contact-btn">Contact</a>
         </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
-            <p class="welcome-text">WELCOME TO MY WORLD ✨</p>
-            <h1>Hi, I'm <span class="highlight">Naga Sai Balam</span></h1>
-            <h1><span class="highlight">Software </span> Developer</h1>
-            <p class="hero-description">
-                Passionate Software Developer with expertise in modern web technologies. 
-                I create innovative and scalable digital solutions that enhance user experience 
-                and drive business growth.
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">My Projects</a>
-                <a href="/Resume1.pdf" class="btn btn-secondary" target="_blank">Download CV</a>
-            </div>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/nagasai-balam-ab36b7285/" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://github.com/nagasai1155" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:nagasaibalam@gmail.com">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="tel:+916302854330">
-                    <i class="fas fa-phone"></i>
-                </a>
-            </div>
+      <div class="hero-content">
+        <div class="status-badge">
+          <span class="pulse-dot"></span>
+          <span>Available for work</span>
         </div>
-        <div class="hero-image">
-            <div class="avatar">
-                <img src="my-photo.jpg" alt="Naga Sai Balam" class="profile-image">
-            </div>
+        <p class="welcome-text">WELCOME TO MY WORLD ✨</p>
+        <h1>Hi, I'm <span class="highlight">Naga Sai Balam</span></h1>
+        <h1><span class="highlight">Software </span> Developer</h1>
+        <p class="hero-description">
+          Passionate Software Developer with expertise in modern web
+          technologies. I create innovative and scalable digital solutions that
+          enhance user experience and drive business growth.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">My Projects</a>
+          <a href="/Resume1.pdf" class="btn btn-secondary" target="_blank"
+            >Download CV</a
+          >
         </div>
+        <div class="social-links">
+          <a
+            href="https://www.linkedin.com/in/nagasai-balam-ab36b7285/"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/nagasai1155" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:nagasaibalam@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a href="tel:+916302854330">
+            <i class="fas fa-phone"></i>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="avatar">
+          <img src="nagasai-new-image.jpg" alt="Naga Sai Balam" class="profile-image" />
+        </div>
+      </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section fade-in">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-image">
-                <img src="about-image.jpeg" alt="Naga Sai Balam" class="about-img">
-            </div>
-            <div>
-                <p class="about-text">
-                    Welcome to my portfolio! I'm Naga Sai Balam, a passionate Full Stack Developer 
-                    with experience in creating scalable web applications and mobile solutions. 
-                    I specialize in modern technologies like React.js, Node.js, and have a strong 
-                    foundation in data structures and algorithms.
-                </p>
-                <p class="about-text">
-                    Currently pursuing B.Tech in Computer Science and Engineering at Lovely Professional University 
-                    . I'm deeply committed to my work, investing creativity and precision into 
-                    every project to ensure a unique and effective user experience.
-                </p>
-                
-                <h3 style="margin-bottom: 1rem;">Skills</h3>
-                <div class="skills-grid">
-                    <div class="skill-item">JavaScript</div>
-                    <div class="skill-item">TypeScript</div>
-                    <div class="skill-item">React.js</div>
-                    <div class="skill-item">Node.js</div>
-                    <div class="skill-item">MongoDB</div>
-                    <div class="skill-item">MySQL</div>
-                    <div class="skill-item">React Native</div>
-                    <div class="skill-item">Java</div>
-                    <div class="skill-item">C++</div>
-                    <div class="skill-item">Git & GitHub</div>
-                    <div class="skill-item">Docker</div>
-                    <div class="skill-item">Spring Boot</div>
-                </div>
-            </div>
+      <h2 class="section-title">About Me</h2>
+      
+      <!-- Stats Counter -->
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-code"></i></div>
+          <div class="stat-number" data-target="7">0</div>
+          <div class="stat-label">Projects Completed</div>
         </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+          <div class="stat-number" data-target="1">0</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-laptop-code"></i></div>
+          <div class="stat-number" data-target="18">0</div>
+          <div class="stat-label">Skills Mastered</div>
+        </div>
+       
+      </div>
+
+      <div class="about-content">
+        <div class="about-image">
+          <img src="about-image.jpeg" alt="Naga Sai Balam" class="about-img" />
+        </div>
+        <div>
+          <p class="about-text">
+            Welcome to my portfolio! I'm Naga Sai Balam, a passionate Full Stack
+            Developer with experience in creating scalable web applications and
+            mobile solutions. I specialize in modern technologies like React.js,
+            Node.js, and have a strong foundation in data structures and
+            algorithms.
+          </p>
+          <p class="about-text">
+            Currently pursuing B.Tech in Computer Science and Engineering at
+            Lovely Professional University . I'm deeply committed to my work,
+            investing creativity and precision into every project to ensure a
+            unique and effective user experience.
+          </p>
+
+          <h3 style="margin-bottom: 1.5rem">Programming Languages</h3>
+          <div class="skills-grid">
+            <div class="skill-item">Java</div>
+            <div class="skill-item">C++</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">TypeScript</div>
+          
+            <div class="skill-item">Python</div>
+          </div>
+
+          <h3 style="margin-bottom: 1rem; margin-top: 2rem">Tech Stack</h3>
+          <div class="skills-grid">
+            <div class="skill-item">HTML5</div>
+            <div class="skill-item">CSS3</div>
+            <div class="skill-item">Bootstrap</div>
+            <div class="skill-item">Tailwind CSS</div>
+           
+            <div class="skill-item">Redux</div>
+            
+            <div class="skill-item">Express.js</div>
+            <div class="skill-item">React.js</div>
+            <div class="skill-item">Node.js</div>
+            <div class="skill-item">MongoDB</div>
+            <div class="skill-item">MySQL</div>
+            <div class="skill-item">React Native</div>
+            <div class="skill-item">Git & GitHub</div>
+            <div class="skill-item">Docker</div>
+           
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Experience Section -->
     <section id="experience" class="section fade-in">
-        <h2 class="section-title">Experience</h2>
-        <div class="experience-timeline">
-            <div class="experience-item">
-                <h3 class="experience-title">Full Stack Engineer Intern</h3>
-                <p class="experience-company">Eizen</p>
-                <p class="experience-duration">Jan 2025 - Jul 2025 (On-site)</p>
-                <ul>
-                    <li>Developed and maintained scalable web applications using TypeScript, React.js, and Spring Boot</li>
-                    <li>Assisted in developing and refining the official website by applying best practices and UI improvements</li>
-                    <li>Integrated ML algorithms into the user interface, ensuring consistency between backend, ML and UI components</li>
-                    <li>Developed the Agents mobile app for video analytics with real-time object detection and incident tracking</li>
-                </ul>
-            </div>
-            
-            <div class="experience-item">
-                <h3 class="experience-title">Full Stack Developer Intern</h3>
-                <p class="experience-company">Elite Tech Intern</p>
-                <p class="experience-duration">Sep 2024 - Feb 2025 (Hybrid)</p>
-                <ul>
-                    <li>Contributed to the development and maintenance of the official website for Elite Tech Intern Organization</li>
-                    <li>Improved performance and readability by optimizing existing code and implementing efficient programming practices</li>
-                    <li>Assisted senior developers in debugging and applying fixes, as well as designing and managing database tables using MySQL</li>
-                    <li>Actively collaborated with the team to understand real-world development workflows</li>
-                </ul>
-            </div>
+      <h2 class="section-title">Experience</h2>
+      <div class="experience-timeline">
+        <div class="experience-item">
+          <h3 class="experience-title">Full Stack Engineer Intern</h3>
+          <p class="experience-company">Eizen</p>
+          <p class="experience-duration">Jan 2025 - Jul 2025 (On-site)</p>
+          <ul>
+            <li>
+              Developed and maintained scalable web applications using
+              TypeScript, React.js, and Spring Boot
+            </li>
+            <li>
+              Assisted in developing and refining the official website by
+              applying best practices and UI improvements
+            </li>
+            <li>
+              Integrated ML algorithms into the user interface, ensuring
+              consistency between backend, ML and UI components
+            </li>
+            <li>
+              Developed the Agents mobile app for video analytics with real-time
+              object detection and incident tracking
+            </li>
+          </ul>
         </div>
+
+        <div class="experience-item">
+          <h3 class="experience-title">Full Stack Developer Intern</h3>
+          <p class="experience-company">Elite Tech Intern</p>
+          <p class="experience-duration">Sep 2024 - Feb 2025 (Hybrid)</p>
+          <ul>
+            <li>
+              Contributed to the development and maintenance of the official
+              website for Elite Tech Intern Organization
+            </li>
+            <li>
+              Improved performance and readability by optimizing existing code
+              and implementing efficient programming practices
+            </li>
+            <li>
+              Assisted senior developers in debugging and applying fixes, as
+              well as designing and managing database tables using MySQL
+            </li>
+            <li>
+              Actively collaborated with the team to understand real-world
+              development workflows
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects" class="section fade-in">
-        <h2 class="section-title">My Projects</h2>
-        <p style="text-align: center; margin-bottom: 3rem; opacity: 0.9;">
-            Discover the projects that showcase my passion for design and innovation
-        </p>
-        
-        <div class="projects-grid">
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="ecomerce-image.jpg" alt="E-commerce Website" class="project-img">
-                </div>
-                <h3 class="project-title">E-commerce Website</h3>
-                <p class="project-description">
-                    Designed and enhanced a full-stack e-commerce web application with features for both users and administrators. 
-                    Developed user interface with dynamic routing and integrated Add to Cart functionality with secure JWT authentication.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">React.js</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">MongoDB</span>
-                    <span class="tech-tag">JWT</span>
-                    <span class="tech-tag">Express.js</span>
-                </div>
-                <a href="https://ecommerce-wab.netlify.app/" target ="_blank" class="project-link">View Project →</a>
-            </div>
+      <h2 class="section-title">My Projects</h2>
+      <p style="text-align: center; margin-bottom: 3rem; opacity: 0.9">
+        Discover the projects that showcase my passion for design and innovation
+      </p>
 
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="gemini-image.png" alt="Gemini AI LLM" class="project-img">
-                </div>
-                <h3 class="project-title">Gemini AI LLM</h3>
-                <p class="project-description">
-                    An AI-driven interactive web application simulating real-time AI responses. 
-                    Improved responsive UI to adapt seamlessly across different devices with secure 
-                    user authentication and JWT-based credential storage.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">AI Integration</span>
-                    <span class="tech-tag">Responsive Design</span>
-                    <span class="tech-tag">JWT</span>
-                </div>
-                <a href="https://gemini-llm-updated.netlify.app/" target ="_blank" class="project-link">View Project →</a>
-            </div>
-
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="sweets-image.jpg" alt="Sweets website" class="project-img">
-                </div>
-                <h3 class="project-title">Sweets website</h3>
-                <p class="project-description">
-                    Developed a sweets ordering application with features such as product catalog management,
-                     real-time order tracking, secure user authentication, and integrated payment processing for seamless user experience.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">React.js</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">MySQL</span>
-                    <span class="tech-tag">JWT</span>
-                    <span class="tech-tag">Express.js</span>
-                </div>
-                <a href="https://verdant-pony-b4e42a.netlify.app/" target ="_blank" class="project-link">View Project →</a>
-            </div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="ecomerce-image.jpg"
+              alt="E-commerce Website"
+              class="project-img"
+            />
+          </div>
+          <h3 class="project-title">E-commerce Website</h3>
+          <p class="project-description">
+            Designed and enhanced a full-stack e-commerce web application with
+            features for both users and administrators. Developed user interface
+            with dynamic routing and integrated Add to Cart functionality with
+            secure JWT authentication.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">JWT</span>
+            <span class="tech-tag">Express.js</span>
+          </div>
+          <a
+            href="https://ecommerce-wab.netlify.app/"
+            target="_blank"
+            class="project-link"
+            >View Project →</a
+          >
         </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="gemini-image.png"
+              alt="Gemini AI LLM"
+              class="project-img"
+            />
+          </div>
+          <h3 class="project-title">Gemini AI LLM</h3>
+          <p class="project-description">
+            An AI-driven interactive web application simulating real-time AI
+            responses. Improved responsive UI to adapt seamlessly across
+            different devices with secure user authentication and JWT-based
+            credential storage.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">AI Integration</span>
+            <span class="tech-tag">Responsive Design</span>
+            <span class="tech-tag">JWT</span>
+          </div>
+          <a
+            href="https://gemini-llm-updated.netlify.app/"
+            target="_blank"
+            class="project-link"
+            >View Project →</a
+          >
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">
+            <img
+              src="sweets-image.jpg"
+              alt="Sweets website"
+              class="project-img"
+            />
+          </div>
+          <h3 class="project-title">Sweets website</h3>
+          <p class="project-description">
+            Developed a sweets ordering application with features such as
+            product catalog management, real-time order tracking, secure user
+            authentication, and integrated payment processing for seamless user
+            experience.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">React.js</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">JWT</span>
+            <span class="tech-tag">Express.js</span>
+          </div>
+          <a
+            href="https://verdant-pony-b4e42a.netlify.app/"
+            target="_blank"
+            class="project-link"
+            >View Project →</a
+          >
+        </div>
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="section fade-in">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-content">
-            <div class="contact-info">
-                <h3>Let's Create Something Amazing Together</h3>
-                <p>
-                    I'm always excited to work on new projects and collaborate with talented individuals. 
-                    Whether you have a project in mind or just want to connect, feel free to reach out!
-                </p>
-                
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <div>
-                        <strong>Email</strong><br>
-                        nagasaibalam@gmail.com
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <i class="fas fa-phone"></i>
-                    <div>
-                        <strong>Phone</strong><br>
-                        +91 6302854330
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <div>
-                        <strong>LinkedIn</strong><br>
-                        nagasai-balam-ab36b7285
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <div>
-                        <strong>GitHub</strong><br>
-                        github.com/nagasai1155
-                    </div>
-                </div>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-content">
+        <div class="contact-info">
+          <h3>Let's Create Something Amazing Together</h3>
+          <p>
+            I'm always excited to work on new projects and collaborate with
+            talented individuals. Whether you have a project in mind or just
+            want to connect, feel free to reach out!
+          </p>
+
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+              <strong>Email</strong><br />
+              nagasaibalam@gmail.com
             </div>
-            
-            <form class="contact-form">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" placeholder="Your Name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" placeholder="Enter your email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea rows="5" placeholder="Enter message" required></textarea>
-                </div>
-                
-                <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+          </div>
+
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+              <strong>Phone</strong><br />
+              +91 6302854330
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fab fa-linkedin"></i>
+            <div>
+              <strong>LinkedIn</strong><br />
+              nagasai-balam-ab36b7285
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <i class="fab fa-github"></i>
+            <div>
+              <strong>GitHub</strong><br />
+              github.com/nagasai1155
+            </div>
+          </div>
         </div>
+
+        <form class="contact-form" id="contactForm">
+          <div id="formMessage" class="form-message"></div>
+          
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="name" placeholder="Your Name" required />
+          </div>
+
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="form-group">
+            <label>Message</label>
+            <textarea rows="5" name="message" placeholder="Enter message" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span class="btn-text">Send Message</span>
+            <span class="btn-loader" style="display: none;">
+              <i class="fas fa-spinner fa-spin"></i>
+            </span>
+          </button>
+        </form>
+      </div>
     </section>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
