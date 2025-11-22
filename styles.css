@@ -458,38 +458,6 @@ body.light-mode .btn-primary:hover {
     50% { opacity: 0.8; transform: scale(1.05); }
 }
 
-.scroll-indicator {
-    position: absolute;
-    bottom: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-}
-
-.mouse {
-    width: 24px;
-    height: 40px;
-    border: 2px solid var(--text-secondary);
-    border-radius: 15px;
-    position: relative;
-}
-
-.wheel {
-    width: 4px;
-    height: 8px;
-    background: var(--text-secondary);
-    border-radius: 2px;
-    position: absolute;
-    top: 8px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: scroll 2s infinite;
-}
-
-@keyframes scroll {
-    0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-    100% { opacity: 0; transform: translateX(-50%) translateY(15px); }
-}
 
 /* ==================== SECTIONS ==================== */
 .section {
@@ -1067,10 +1035,24 @@ body.light-mode .form-group textarea:focus {
         justify-content: center;
     }
 
+    .hero-image {
+        justify-content: center;
+        padding-right: 0;
+        margin-top: 2rem;
+        width: 100%;
+    }
+
     .image-wrapper {
         width: 280px;
         height: 280px;
-        margin-top: 2rem;
+        margin: 0 auto;
+        margin-right: 0;
+    }
+
+    .profile-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .about-content {
@@ -1114,6 +1096,11 @@ body.light-mode .form-group textarea:focus {
     .btn {
         padding: 0.75rem 1.5rem;
         font-size: 0.9rem;
+    }
+
+    .image-wrapper {
+        width: 240px;
+        height: 240px;
     }
 }
 
