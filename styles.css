@@ -1037,16 +1037,21 @@ body.light-mode .form-group textarea:focus {
 
     .hero-image {
         justify-content: center;
+        align-items: center;
         padding-right: 0;
+        padding-left: 0;
         margin-top: 2rem;
+        margin-left: 0;
+        margin-right: 0;
         width: 100%;
+        display: flex;
     }
 
     .image-wrapper {
         width: 280px;
         height: 280px;
         margin: 0 auto;
-        margin-right: 0;
+        position: relative;
     }
 
     .profile-img {
@@ -1101,6 +1106,13 @@ body.light-mode .form-group textarea:focus {
     .image-wrapper {
         width: 240px;
         height: 240px;
+        margin: 0 auto;
+    }
+
+    .hero-image {
+        padding: 0;
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
