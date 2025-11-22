@@ -770,24 +770,27 @@ body.light-mode .tech-badge:hover {
 
 .project-links {
     display: flex;
-    gap: 1rem;
+    gap: 0.75rem;
     margin-top: 1.5rem;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .project-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.7rem 1.5rem;
+    padding: 0.7rem 1.2rem;
     background: linear-gradient(135deg, var(--primary), var(--accent));
     color: white;
     text-decoration: none;
     border-radius: 10px;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: var(--transition);
     box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
 }
 
 body.light-mode .project-link {
@@ -1087,6 +1090,17 @@ body.light-mode .form-group textarea:focus {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+
+    .project-links {
+        gap: 0.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .project-link {
+        padding: 0.6rem 1rem;
+        font-size: 0.8rem;
+        flex: 1;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1113,6 +1127,15 @@ body.light-mode .form-group textarea:focus {
         padding: 0;
         margin-left: 0;
         margin-right: 0;
+    }
+
+    .project-link {
+        padding: 0.55rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .project-links {
+        gap: 0.5rem;
     }
 }
 
