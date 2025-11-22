@@ -419,15 +419,17 @@ body.light-mode .btn-primary:hover {
 .hero-image {
     flex: 1;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     z-index: 1;
+    padding-right: 2rem;
 }
 
 .image-wrapper {
     position: relative;
     width: 350px;
     height: 350px;
+    margin-right: 1rem;
 }
 
 .profile-img {
@@ -765,58 +767,8 @@ body.light-mode .tech-badge:hover {
     border-color: var(--primary);
 }
 
-.project-image {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-}
-
-.project-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition);
-}
-
-.project-card:hover .project-img {
-    transform: scale(1.1);
-}
-
-.project-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: var(--transition);
-}
-
-.project-card:hover .project-overlay {
-    opacity: 1;
-}
-
-.project-link {
-    width: 50px;
-    height: 50px;
-    background: var(--primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-.project-link:hover {
-    transform: scale(1.1) rotate(90deg);
-}
-
 .project-content {
-    padding: 1.5rem;
+    padding: 2rem;
 }
 
 .project-title {
@@ -835,6 +787,7 @@ body.light-mode .tech-badge:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .project-tags span {
@@ -845,6 +798,59 @@ body.light-mode .tech-badge:hover {
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--text-secondary);
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+}
+
+body.light-mode .project-link {
+    box-shadow: 0 4px 15px rgba(255, 108, 55, 0.2);
+}
+
+.project-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4);
+}
+
+body.light-mode .project-link:hover {
+    box-shadow: 0 6px 20px rgba(255, 108, 55, 0.4);
+}
+
+.project-link.secondary {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    box-shadow: none;
+}
+
+.project-link.secondary:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.3);
+}
+
+body.light-mode .project-link.secondary:hover {
+    box-shadow: 0 6px 20px rgba(255, 108, 55, 0.3);
 }
 
 /* ==================== CONTACT SECTION ==================== */

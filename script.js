@@ -1,23 +1,38 @@
 // ==================== THEME TOGGLE ====================
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
+const favicon = document.getElementById('favicon');
+
+// Function to update favicon based on theme
+function updateFavicon(isLightMode) {
+    if (favicon) {
+        favicon.href = isLightMode ? 'favicon-light.svg' : 'favicon.svg';
+    }
+}
 
 // Load saved theme
 const savedTheme = localStorage.getItem('theme') || 'dark';
 if (savedTheme === 'light') {
     body.classList.add('light-mode');
     themeToggle.querySelector('i').classList.replace('fa-moon', 'fa-sun');
+    updateFavicon(true);
+} else {
+    updateFavicon(false);
 }
 
 themeToggle.addEventListener('click', () => {
     body.classList.toggle('light-mode');
     const icon = themeToggle.querySelector('i');
-    if (body.classList.contains('light-mode')) {
+    const isLightMode = body.classList.contains('light-mode');
+    
+    if (isLightMode) {
         icon.classList.replace('fa-moon', 'fa-sun');
         localStorage.setItem('theme', 'light');
+        updateFavicon(true);
     } else {
         icon.classList.replace('fa-sun', 'fa-moon');
         localStorage.setItem('theme', 'dark');
+        updateFavicon(false);
     }
 });
 
