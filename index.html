@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
       rel="stylesheet"
     />
     <link
@@ -48,147 +48,213 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-      <div class="hero-background">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
-      </div>
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="pulse-dot"></span>
-          <span>Available for work</span>
+      <h1 class="sr-only">Naga Sai Balam — Full Stack Engineer</h1>
+      <div class="hero-layout">
+        <div class="terminal-window" role="region" aria-label="Introduction terminal">
+          <div class="terminal-titlebar">
+            <div class="terminal-dots" aria-hidden="true">
+              <span class="dot dot-close"></span>
+              <span class="dot dot-minimize"></span>
+              <span class="dot dot-maximize"></span>
+            </div>
+            <span class="terminal-filename">nsb@portfolio ~ zsh</span>
+            <span class="terminal-status">
+              <span class="status-dot" aria-hidden="true"></span>
+              available
+            </span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-output" id="terminalOutput" aria-live="polite">
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="cmd">whoami</span>
+              </div>
+              <div class="terminal-line terminal-response" id="line-name"></div>
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="cmd">cat role.txt</span>
+              </div>
+              <div class="terminal-line terminal-response" id="line-role"></div>
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="cmd">echo $FOCUS</span>
+              </div>
+              <div class="terminal-line terminal-response" id="line-focus"></div>
+              <div class="terminal-line">
+                <span class="prompt">$</span>
+                <span class="cmd">wc -l problems_solved</span>
+              </div>
+              <div class="terminal-line terminal-response" id="line-stat"></div>
+              <div class="terminal-line terminal-active">
+                <span class="prompt">$</span>
+                <span class="cmd-input" id="terminalCursor" aria-hidden="true"></span>
+                <span class="cursor-blink" aria-hidden="true">█</span>
+              </div>
+            </div>
+            <nav class="hero-commands" aria-label="Quick actions">
+              <a href="#projects" class="cmd-btn">
+                <span class="cmd-prefix">./</span>view-work
+              </a>
+              <a href="NagasaiBalam_Resume_FullSTACK.pdf" class="cmd-btn" target="_blank" rel="noopener">
+                <span class="cmd-prefix">./</span>download-resume.pdf
+              </a>
+              <a href="#contact" class="cmd-btn">
+                <span class="cmd-prefix">./</span>contact --email
+              </a>
+              <a
+                href="https://github.com/nagasai1155"
+                class="cmd-btn cmd-btn-ghost"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="cmd-prefix">open</span> github.com/nagasai1155
+              </a>
+              <a
+                href="https://www.linkedin.com/in/nagasai-b-ab36b7285/"
+                class="cmd-btn cmd-btn-ghost"
+                target="_blank"
+                rel="noopener"
+              >
+                <span class="cmd-prefix">open</span> linkedin
+              </a>
+            </nav>
+          </div>
         </div>
-        <h1 class="hero-title">
-          <span class="greeting">Hi, I'm</span>
-          <span class="name">Naga Sai Balam</span>
-          <span class="role">Software Engineer</span>
-        </h1>
-        <p class="hero-description">
-          Passionate Software Developer with expertise in modern web
-          technologies. I create innovative and scalable digital solutions that
-          enhance user experience and drive business growth.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">
-            <span>View Work</span>
-            <i class="fas fa-arrow-right"></i>
-          </a>
-          <a href="NagasaiBalam_Resume_FullSTACK.pdf" class="btn btn-secondary" target="_blank">
-            <span>Download CV</span>
-            <i class="fas fa-download"></i>
-          </a>
-        </div>
-        <div class="hero-social">
-          <a
-            href="https://www.linkedin.com/in/nagasai-b-ab36b7285/"
-            target="_blank"
-            aria-label="LinkedIn"
-          >
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/nagasai1155"
-            target="_blank"
-            aria-label="GitHub"
-          >
-            <i class="fab fa-github"></i>
-          </a>
-          <!-- <a href="mailto:nagasaibalam@gmail.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-          <a href="tel:+916302854330" aria-label="Phone">
-            <i class="fas fa-phone"></i>
-          </a> -->
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="image-wrapper">
-          <img
-            src="nagasai_professional_image.png"
-            alt="Naga Sai Balam"
-            class="profile-img"
-          />
-          <div class="image-glow"></div>
-        </div>
+
+        <aside class="hero-sidebar reveal">
+          <div class="editor-panel profile-panel">
+            <div class="panel-tabbar">
+              <span class="panel-tab active">profile.tsx</span>
+            </div>
+            <div class="profile-panel-body">
+              <div class="line-numbers" aria-hidden="true">
+                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+              </div>
+              <div class="profile-code">
+                <img
+                  src="nagasai_professional_image.png"
+                  alt="Naga Sai Balam"
+                  class="profile-img"
+                  width="280"
+                  height="280"
+                />
+                <pre class="profile-snippet" aria-hidden="true"><code><span class="syn-keyword">const</span> <span class="syn-name">developer</span> = {
+  <span class="syn-prop">name</span>: <span class="syn-string">"Naga Sai Balam"</span>,
+  <span class="syn-prop">stack</span>: [<span class="syn-string">"React"</span>, <span class="syn-string">"Next.js"</span>, <span class="syn-string">"Node"</span>],
+  <span class="syn-prop">status</span>: <span class="syn-string">"open_to_work"</span>
+};</code></pre>
+              </div>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
 
     <!-- About Section -->
     <section id="about" class="section about-section">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              Welcome to my portfolio! I'm Naga Sai Balam, a passionate Full
-              Stack Developer with experience in creating scalable web
-              applications and mobile solutions. I specialize in modern
-              technologies like React.js, Next.js, Node.js, Spring Boot, MongoDB, MySQL, and have a strong foundation
-              in data structures and algorithms. I'm deeply committed to my work,
-              investing creativity and precision into every project to ensure a
-              unique and effective user experience.
-            </p> 
-            <div class="stats-grid">
-              <div class="stat-item">
-                <div class="stat-number" data-target="6">0</div>
-                <div class="stat-label">Projects Completed</div>
+        <header class="section-header reveal">
+          <span class="section-tag">// about</span>
+          <h2 class="section-title">&lt;AboutMe /&gt;</h2>
+        </header>
+
+        <div class="editor-panel about-panel reveal">
+          <div class="panel-tabbar">
+            <span class="panel-tab active">README.md</span>
+            <span class="panel-tab">stats.json</span>
+            <span class="panel-tab">package.json</span>
+          </div>
+
+          <div class="about-content">
+            <div class="about-text">
+              <p class="about-bio">
+                Full stack engineer shipping production web apps with React, Next.js,
+                and Node.js. Built OAuth-secured APIs, ML-integrated dashboards, and
+                AI-powered platforms across internships at Sendora AI and Eizen —
+                20+ feature deployments and 6 shipped projects. 280+ DSA problems
+                solved on LeetCode and CodeChef.
+              </p>
+
+              <div class="stats-output" id="statsOutput">
+                <div class="stats-terminal-header">
+                  <span class="prompt">$</span>
+                  <span class="cmd">node stats.js</span>
+                </div>
+                <pre class="stats-block" aria-label="Career statistics"><code>{
+  <span class="syn-prop">"projects_shipped"</span>: <span class="stat-number" data-target="6" data-suffix="">0</span>,
+  <span class="syn-prop">"years_experience"</span>: <span class="stat-number" data-target="1" data-suffix="">0</span>,
+  <span class="syn-prop">"skills_count"</span>: <span class="stat-number" data-target="24" data-suffix="">0</span>,
+  <span class="syn-prop">"problems_solved"</span>: <span class="stat-number" data-target="280" data-suffix="+">0</span>
+}</code></pre>
               </div>
-              <div class="stat-item">
-                <div class="stat-number" data-target="1">0</div>
-                <div class="stat-label">Years Experience</div>
+
+              <div class="skills-filetree">
+                <p class="filetree-label"><span class="syn-comment">// dependencies</span></p>
+
+                <details class="filetree-folder" open>
+                  <summary class="skills-heading">
+                    <span class="folder-icon">▾</span> programming-languages/
+                  </summary>
+                  <div class="skills-grid">
+                    <span class="skill-tag syn-string">Java</span>
+                    <span class="skill-tag syn-string">C++</span>
+                    <span class="skill-tag syn-string">JavaScript</span>
+                    <span class="skill-tag syn-string">TypeScript</span>
+                    <span class="skill-tag syn-string">Python</span>
+                  </div>
+                </details>
+
+                <details class="filetree-folder" open>
+                  <summary class="skills-heading">
+                    <span class="folder-icon">▾</span> tech-stack/
+                  </summary>
+                  <div class="skills-grid">
+                    <span class="skill-tag">HTML5</span>
+                    <span class="skill-tag">CSS3</span>
+                    <span class="skill-tag">Bootstrap</span>
+                    <span class="skill-tag">Tailwind CSS</span>
+                    <span class="skill-tag">Redux</span>
+                    <span class="skill-tag">Express.js</span>
+                    <span class="skill-tag">React.js</span>
+                    <span class="skill-tag">Next.js</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">Spring Boot</span>
+                    <span class="skill-tag">MongoDB</span>
+                    <span class="skill-tag">MySQL</span>
+                    <span class="skill-tag">React Native</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">OAuth 2.0</span>
+                    <span class="skill-tag">JWT</span>
+                    <span class="skill-tag">REST APIs</span>
+                    <span class="skill-tag">Microservices</span>
+                  </div>
+                </details>
+
+                <details class="filetree-folder">
+                  <summary class="skills-heading">
+                    <span class="folder-icon">▸</span> dev-tools/
+                  </summary>
+                  <div class="skills-grid">
+                    <span class="skill-tag syn-keyword">Postman</span>
+                    <span class="skill-tag syn-keyword">VS Code</span>
+                    <span class="skill-tag syn-keyword">Cursor IDE</span>
+                    <span class="skill-tag syn-keyword">Claude AI</span>
+                  </div>
+                </details>
+
+                <details class="filetree-folder">
+                  <summary class="skills-heading">
+                    <span class="folder-icon">▸</span> core-concepts/
+                  </summary>
+                  <div class="skills-grid">
+                    <span class="skill-tag">Object-Oriented Programming</span>
+                    <span class="skill-tag">Data Structures & Algorithms</span>
+                    <span class="skill-tag">API Testing</span>
+                    <span class="skill-tag">AI/ML Integration</span>
+                  </div>
+                </details>
               </div>
-              <div class="stat-item">
-                <div class="stat-number" data-target="24">0</div>
-                <div class="stat-label">Skills Mastered</div>
-              </div>
-            </div>
-
-            <h3 class="skills-heading">Programming Languages</h3>
-            <div class="skills-grid">
-              <div class="skill-item">Java</div>
-              <div class="skill-item">C++</div>
-              <div class="skill-item">JavaScript</div>
-              <div class="skill-item">TypeScript</div>
-              <div class="skill-item">Python</div>
-            </div>
-
-            <h3 class="skills-heading">Tech Stack</h3>
-            <div class="skills-grid">
-              <div class="skill-item">HTML5</div>
-              <div class="skill-item">CSS3</div>
-              <div class="skill-item">Bootstrap</div>
-              <div class="skill-item">Tailwind CSS</div>
-              <div class="skill-item">Redux</div>
-              <div class="skill-item">Express.js</div>
-              <div class="skill-item">React.js</div>
-              <div class="skill-item">Next.js</div>
-              <div class="skill-item">Node.js</div>
-              <div class="skill-item">Spring Boot</div>
-              <div class="skill-item">MongoDB</div>
-              <div class="skill-item">MySQL</div>
-              <div class="skill-item">React Native</div>
-              <div class="skill-item">Git & GitHub</div>
-              <div class="skill-item">Docker</div>
-              <div class="skill-item">OAuth 2.0</div>
-              <div class="skill-item">JWT</div>
-              <div class="skill-item">REST APIs</div>
-              <div class="skill-item">Microservices</div>
-            </div>
-
-            <h3 class="skills-heading">Developer Tools</h3>
-            <div class="skills-grid">
-              <div class="skill-item">Postman</div>
-              <div class="skill-item">VS Code</div>
-              <div class="skill-item">Cursor IDE</div>
-              <div class="skill-item">Claude AI</div>
-            </div>
-
-            <h3 class="skills-heading">Core Concepts</h3>
-            <div class="skills-grid">
-              <div class="skill-item">Object-Oriented Programming</div>
-              <div class="skill-item">Data Structures & Algorithms</div>
-              <div class="skill-item">API Testing</div>
-              <div class="skill-item">AI/ML Integration</div>
             </div>
           </div>
         </div>
