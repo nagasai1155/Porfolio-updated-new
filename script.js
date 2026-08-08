@@ -11,13 +11,6 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 // ==================== THEME TOGGLE ====================
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
-const faviconEl = document.getElementById('favicon');
-
-function updateFavicon(isLight) {
-  if (faviconEl) {
-    faviconEl.href = isLight ? 'favicon-light.svg' : 'favicon.svg';
-  }
-}
 
 function applyTheme(theme) {
   if (theme === 'light') {
@@ -26,14 +19,12 @@ function applyTheme(theme) {
     if (icon) {
       icon.className = 'fas fa-sun';
     }
-    updateFavicon(true);
   } else {
     body.classList.remove('light-mode');
     const icon = themeToggle ? themeToggle.querySelector('i') : null;
     if (icon) {
       icon.className = 'fas fa-moon';
     }
-    updateFavicon(false);
   }
 }
 
