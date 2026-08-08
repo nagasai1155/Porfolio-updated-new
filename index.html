@@ -25,11 +25,20 @@
 
 <body>
 
-  <!-- ==================== NAVIGATION ==================== -->
+  <!-- ==================== DYNAMIC DOCK NAVBAR ==================== -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
-      <a href="#home" class="logo" aria-label="Naga Sai Balam — Home">NSB<span>.</span></a>
+      
+      <!-- Brand Logo with Code Icon & Live Status Dot -->
+      <a href="#home" class="logo" aria-label="Naga Sai Balam — Home">
+        <span class="logo-box">
+          <i class="fas fa-code"></i>
+        </span>
+        <span class="logo-text">NSB<span class="logo-accent">.dev</span></span>
+        <span class="logo-live-dot" title="Available for work" aria-hidden="true"></span>
+      </a>
 
+      <!-- Navigation Links -->
       <div class="nav-links" id="navLinks" role="menubar">
         <a href="#home" role="menuitem"><span>Home</span></a>
         <a href="#about" role="menuitem"><span>About</span></a>
@@ -39,74 +48,159 @@
         <a href="#contact" role="menuitem"><span>Contact</span></a>
       </div>
 
+      <!-- Action Controls -->
       <div class="nav-actions">
+        <a href="#contact" class="nav-talk-btn" aria-label="Let's Talk — Contact">
+          <span class="btn-glow"></span>
+          <span>Let's Talk</span>
+          <i class="fas fa-paper-plane" aria-hidden="true"></i>
+        </a>
+
         <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme" title="Toggle dark/light mode">
           <i class="fas fa-moon" aria-hidden="true"></i>
         </button>
+
         <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu" aria-expanded="false"
           aria-controls="navLinks">
           <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
       </div>
+
     </div>
   </nav>
 
   <!-- ==================== HERO SECTION ==================== -->
   <section id="home" class="hero-section" aria-label="Introduction">
-    <div class="hero">
+    <div class="hero-container">
+      
+      <!-- Left Content Column -->
       <div class="hero-content">
-        <div class="hero-badge">
-          <span class="pulse-dot" aria-hidden="true"></span>
-          <span>Available for work</span>
+        
+        <!-- Eyebrow & Availability Badge -->
+        <div class="hero-meta-row">
+          <div class="hero-badge">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            <span>Available for work</span>
+          </div>
+          <span class="hero-eyebrow">SOFTWARE ENGINEER • FULL STACK DEVELOPER</span>
         </div>
 
-        <h1 class="hero-title">
-          <span class="greeting">Hi, I'm</span>
-          <span class="name">Naga Sai Balam</span>
-          <span class="role">Software Engineer
-            <span class="hero-subtitle">Full Stack Developer</span>
-          </span>
+        <!-- Main Title & Name -->
+        <h1 class="hero-headline">
+          <span class="hero-greeting">Hi, I'm</span>
+          <span class="hero-name">Naga Sai Balam</span>
         </h1>
 
-        <p class="hero-description">
-          Passionate about building scalable web applications that solve real-world problems.
-          I specialize in modern full-stack development — from React &amp; Next.js frontends
-          to Spring Boot &amp; Node.js backends.
+        <!-- Role Sub-headline -->
+        <p class="hero-role-tagline">
+          Software Engineer building modern, scalable full-stack applications.
         </p>
 
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary" id="hero-view-work">
-            <span>View Work</span>
-            <i class="fas fa-arrow-right" aria-hidden="true"></i>
-          </a>
-          <a href="NagasaiBalam_Resume_FullSTACK.pdf" class="btn btn-secondary" target="_blank"
-            rel="noopener noreferrer" id="hero-download-cv" aria-label="Download Naga Sai Balam's CV (PDF)">
-            <i class="fas fa-download" aria-hidden="true"></i>
-            <span>Download CV</span>
-          </a>
+        <!-- Description -->
+        <p class="hero-description">
+          Passionate about building production-grade digital solutions that solve real-world problems.
+          Specialized in high-performance frontends with React &amp; Next.js and robust backends with Spring Boot &amp; Node.js.
+        </p>
+
+        <!-- CTAs & Social Links -->
+        <div class="hero-actions-row">
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary hero-btn-primary" id="hero-view-work">
+              <span>View My Work</span>
+              <i class="fas fa-arrow-right" aria-hidden="true"></i>
+            </a>
+            <a href="NagasaiBalam_Resume_FullSTACK.pdf" class="btn btn-secondary hero-btn-secondary" target="_blank"
+              rel="noopener noreferrer" id="hero-download-cv" aria-label="Download Naga Sai Balam's CV (PDF)">
+              <span>Download CV</span>
+              <i class="fas fa-download" aria-hidden="true"></i>
+            </a>
+          </div>
+
+          <div class="hero-social" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/nagasai-b-ab36b7285/" target="_blank" rel="noopener noreferrer"
+              aria-label="LinkedIn profile" id="social-linkedin" title="LinkedIn">
+              <i class="fab fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/nagasai1155" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"
+              id="social-github" title="GitHub">
+              <i class="fab fa-github" aria-hidden="true"></i>
+            </a>
+            <a href="mailto:nagasaibalam@gmail.com" aria-label="Send email" id="social-email" title="Email">
+              <i class="fas fa-envelope" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
 
-        <div class="hero-social" aria-label="Social links">
-          <a href="https://www.linkedin.com/in/nagasai-b-ab36b7285/" target="_blank" rel="noopener noreferrer"
-            aria-label="LinkedIn profile" id="social-linkedin">
-            <i class="fab fa-linkedin" aria-hidden="true"></i>
-          </a>
-          <a href="https://github.com/nagasai1155" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile"
-            id="social-github">
-            <i class="fab fa-github" aria-hidden="true"></i>
-          </a>
-          <a href="mailto:nagasaibalam@gmail.com" aria-label="Send email" id="social-email">
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-          </a>
+        <!-- Technology Strip -->
+        <div class="hero-tech-strip" aria-label="Core technology stack">
+          <span class="tech-strip-label">CORE STACK</span>
+          <div class="tech-strip-pills">
+            <span class="tech-pill"><i class="fab fa-react" aria-hidden="true"></i> React.js</span>
+            <span class="tech-pill"><i class="fas fa-cube" aria-hidden="true"></i> Next.js</span>
+            <span class="tech-pill"><i class="fab fa-node-js" aria-hidden="true"></i> Node.js</span>
+            <span class="tech-pill"><i class="fas fa-leaf" aria-hidden="true"></i> Spring Boot</span>
+            <span class="tech-pill"><i class="fas fa-database" aria-hidden="true"></i> MySQL</span>
+          </div>
         </div>
+
       </div>
 
-      <div class="hero-image" aria-hidden="true">
-        <div class="image-wrapper">
-          <img src="nagasai_professional_image.png" alt="Naga Sai Balam — Software Engineer" class="profile-img"
-            loading="eager" width="320" height="320" />
+      <!-- Right Layered Visual Composition Column -->
+      <div class="hero-visual">
+        
+        <!-- Ambient Backdrop Light -->
+        <div class="ambient-glow" aria-hidden="true"></div>
+
+        <!-- Main Product/Profile Card -->
+        <div class="hero-profile-card">
+          <!-- Card Window Bar -->
+          <div class="card-window-bar" aria-hidden="true">
+            <div class="window-dots">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <span class="window-title">nagasai.dev / engineer</span>
+          </div>
+
+          <!-- Profile Image Container -->
+          <div class="card-image-wrap">
+            <img src="nagasai_professional_image.png" alt="Naga Sai Balam — Software Engineer" class="profile-img"
+              loading="eager" width="400" height="480" />
+            <div class="card-image-gradient" aria-hidden="true"></div>
+          </div>
         </div>
+
+        <!-- Floating UI Widget 1: Status (Top Left) -->
+        <div class="floating-widget widget-status" aria-hidden="true">
+          <div class="widget-icon status-icon">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div class="widget-text-group">
+            <span class="widget-label">Status</span>
+            <span class="widget-value">Ready to Deploy</span>
+          </div>
+        </div>
+
+        <!-- Floating UI Widget 2: Tech Stack (Bottom Right) -->
+        <div class="floating-widget widget-stack" aria-hidden="true">
+          <div class="widget-tag">FULL STACK</div>
+          <div class="widget-stack-icons">
+            <span>React</span> • <span>Node</span> • <span>Spring Boot</span>
+          </div>
+        </div>
+
+        <!-- Floating UI Widget 3: Metrics (Bottom Left) -->
+        <div class="floating-widget widget-metrics" aria-hidden="true">
+          <span class="metric-highlight">6+</span>
+          <div class="metric-text-group">
+            <span class="metric-title">Projects Shipped</span>
+            <span class="metric-sub">Production Ready</span>
+          </div>
+        </div>
+
       </div>
+
     </div>
   </section>
 
