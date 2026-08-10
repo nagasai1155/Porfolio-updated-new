@@ -405,7 +405,7 @@ body.light-mode .nav-links a:hover {
    ============================================================ */
 .hero-section {
   position: relative;
-  overflow: hidden;
+  overflow-x: clip;
   padding-top: 104px;
   padding-bottom: var(--sp-16);
   background-image: 
@@ -746,41 +746,71 @@ body.light-mode .card-image-gradient {
   background: linear-gradient(to top, rgba(245, 245, 248, 0.5) 0%, transparent 40%);
 }
 
-/* Floating SaaS UI Widgets */
+/* ============================================================
+   RECTANGULAR ORBIT — CARDS TRAVEL ALONG PROFILE-CARD EDGES
+   ============================================================ */
+
+/* The orbit-ring matches the profile card size. Cards slide along
+   all 4 edges clockwise, making 90° turns at each corner.
+   Perimeter proportions (370×460): top 22%, right 28%, bottom 22%, left 28%. */
+
+.orbit-ring {
+  position: absolute;
+  width: 370px;   /* must match .hero-profile-card width  */
+  height: 460px;  /* must match .hero-profile-card height */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* --- Shared widget styles (smaller cards) --- */
 .floating-widget {
   position: absolute;
   background: var(--bg-surface);
   border: 1px solid var(--border-strong);
-  border-radius: 14px;
-  padding: 10px 16px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  padding: 6px 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(12px);
-  z-index: 3;
   display: flex;
   align-items: center;
-  gap: 12px;
-  animation: float-widget 5s ease-in-out infinite;
+  gap: 8px;
+  pointer-events: auto;
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+
+  /* Rectangular orbit: 18s per full lap */
+  animation: rect-orbit 18s linear infinite;
 }
 
 body.light-mode .floating-widget {
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes float-widget {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-7px); }
+/* Stagger the 3 cards evenly: 0s, -6s, -12s */
+.widget-status  { animation-delay: 0s; }
+.widget-stack   { animation-delay: -6s; }
+.widget-metrics { animation-delay: -12s; }
+
+/* Clockwise rectangular path:
+   Top edge      0% → 22%   (left→right)
+   Right edge   22% → 50%   (top→bottom)
+   Bottom edge  50% → 72%   (right→left)
+   Left edge    72% → 100%  (bottom→top)  */
+@keyframes rect-orbit {
+  0%     { top: 0;    left: 0;    }
+  22%    { top: 0;    left: 100%; }
+  50%    { top: 100%; left: 100%; }
+  72%    { top: 100%; left: 0;    }
+  100%   { top: 0;    left: 0;    }
 }
 
-/* Widget 1: Status (Top Left) */
-.widget-status {
-  top: -12px;
-  left: -24px;
-  animation-delay: 0s;
-}
-
+/* --- Widget 1: Status (smaller) --- */
 .status-icon {
   color: var(--success);
-  font-size: 1.1rem;
+  font-size: 0.85rem;
 }
 
 .widget-text-group {
@@ -789,7 +819,7 @@ body.light-mode .floating-widget {
 }
 
 .widget-label {
-  font-size: 0.675rem;
+  font-size: 0.6rem;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
@@ -797,24 +827,20 @@ body.light-mode .floating-widget {
 }
 
 .widget-value {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--text-primary);
 }
 
-/* Widget 2: Tech Stack (Bottom Right) */
+/* --- Widget 2: Tech Stack (smaller) --- */
 .widget-stack {
-  bottom: 24px;
-  right: -28px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
-  padding: 12px 18px;
-  animation-delay: 2s;
+  gap: 2px;
 }
 
 .widget-tag {
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--primary);
@@ -822,7 +848,7 @@ body.light-mode .floating-widget {
 }
 
 .widget-stack-icons {
-  font-size: 0.775rem;
+  font-size: 0.65rem;
   font-weight: 600;
   color: var(--text-primary);
 }
@@ -831,15 +857,9 @@ body.light-mode .floating-widget {
   color: var(--text-secondary);
 }
 
-/* Widget 3: Metrics (Bottom Left) */
-.widget-metrics {
-  bottom: -16px;
-  left: 16px;
-  animation-delay: 3.5s;
-}
-
+/* --- Widget 3: Metrics (smaller) --- */
 .metric-highlight {
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--primary);
   line-height: 1;
@@ -851,14 +871,14 @@ body.light-mode .floating-widget {
 }
 
 .metric-title {
-  font-size: 0.8rem;
+  font-size: 0.65rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.2;
 }
 
 .metric-sub {
-  font-size: 0.7rem;
+  font-size: 0.55rem;
   color: var(--text-muted);
 }
 
@@ -1915,12 +1935,9 @@ body.light-mode .tech-badge {
     height: 400px;
   }
 
-  .widget-status {
-    left: -12px;
-  }
-
-  .widget-stack {
-    right: -12px;
+  .orbit-ring {
+    width: 320px;
+    height: 400px;
   }
 
   .about-layout {
@@ -2082,22 +2099,15 @@ body.light-mode .tech-badge {
     height: 370px;
   }
 
-  .widget-status {
-    top: -10px;
-    left: -6px;
-    padding: 8px 12px;
+  .orbit-ring {
+    width: 290px;
+    height: 370px;
   }
 
-  .widget-stack {
-    bottom: 12px;
-    right: -6px;
-    padding: 8px 12px;
-  }
-
-  .widget-metrics {
-    bottom: -16px;
-    left: 8px;
-    padding: 8px 12px;
+  .floating-widget {
+    padding: 5px 8px;
+    gap: 6px;
+    border-radius: 8px;
   }
 
   /* Sections */
@@ -2195,16 +2205,24 @@ body.light-mode .tech-badge {
     height: 330px;
   }
 
-  .widget-status {
-    left: -4px;
+  .orbit-ring {
+    width: 260px;
+    height: 330px;
   }
 
-  .widget-stack {
-    right: -4px;
+  .floating-widget {
+    padding: 4px 7px;
+    gap: 5px;
+    border-radius: 7px;
+    font-size: 0.7rem;
   }
 
-  .widget-metrics {
-    display: none;
+  .metric-highlight {
+    font-size: 0.85rem;
+  }
+
+  .widget-stack-icons {
+    font-size: 0.7rem;
   }
 
   .btn {
