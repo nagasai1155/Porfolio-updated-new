@@ -301,5 +301,82 @@ if (contactForm) {
   });
 }
 
+// ==================== PROJECTS SLIDER (AUTOMATIC & MANUAL CONTINUOUS SLIDE) ====================
+const projectsWrapper = document.getElementById('projectsSliderWrapper');
+const projectsTrack = document.getElementById('projectsSliderTrack');
+
+if (projectsWrapper && projectsTrack) {
+  // Duplicate cards for seamless infinite loop
+  projectsTrack.innerHTML += projectsTrack.innerHTML;
+
+  let isDown = false;
+  let startX = 0;
+  let scrollLeftStart = 0;
+  let isHovered = false;
+  let slideSpeed = 0.6; // px per frame for slow left-to-right sliding
+
+  function autoSlide() {
+    if (!isDown && !isHovered) {
+      projectsWrapper.scrollLeft += slideSpeed;
+    }
+
+    // Seamless infinite loop reset
+    const halfWidth = projectsTrack.scrollWidth / 2;
+    if (halfWidth > 0) {
+      if (projectsWrapper.scrollLeft >= halfWidth) {
+        projectsWrapper.scrollLeft -= halfWidth;
+      } else if (projectsWrapper.scrollLeft <= 0) {
+        projectsWrapper.scrollLeft += halfWidth;
+      }
+    }
+
+    requestAnimationFrame(autoSlide);
+  }
+
+  requestAnimationFrame(autoSlide);
+
+  // Mouse hover events
+  projectsWrapper.addEventListener('mouseenter', () => {
+    isHovered = true;
+  });
+  
+  projectsWrapper.addEventListener('mouseleave', () => {
+    isHovered = false;
+    isDown = false;
+    projectsWrapper.classList.remove('is-dragging');
+  });
+
+  // Mouse Drag (Manual Control)
+  projectsWrapper.addEventListener('mousedown', (e) => {
+    isDown = true;
+    projectsWrapper.classList.add('is-dragging');
+    startX = e.pageX - projectsWrapper.offsetLeft;
+    scrollLeftStart = projectsWrapper.scrollLeft;
+  });
+
+  projectsWrapper.addEventListener('mouseup', () => {
+    isDown = false;
+    projectsWrapper.classList.remove('is-dragging');
+  });
+
+  projectsWrapper.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - projectsWrapper.offsetLeft;
+    const walk = (x - startX) * 1.5;
+    projectsWrapper.scrollLeft = scrollLeftStart - walk;
+  });
+
+  // Touch Handling (Mobile Manual Control)
+  projectsWrapper.addEventListener('touchstart', () => {
+    isHovered = true;
+  }, { passive: true });
+
+  projectsWrapper.addEventListener('touchend', () => {
+    isHovered = false;
+  }, { passive: true });
+}
+
 // ==================== INIT ====================
 console.log('Portfolio loaded — Naga Sai Balam');
+
