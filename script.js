@@ -339,7 +339,7 @@ if (projectsWrapper && projectsTrack) {
   projectsWrapper.addEventListener('mouseenter', () => {
     isHovered = true;
   });
-  
+
   projectsWrapper.addEventListener('mouseleave', () => {
     isHovered = false;
     isDown = false;
