@@ -671,7 +671,11 @@
 
         <!-- Right: contact form -->
         <div class="contact-form-wrap">
-          <form id="contactForm" class="contact-form" novalidate aria-label="Contact form">
+          <form id="contactForm" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate aria-label="Contact form">
+            <input type="hidden" name="access_key" value="353b444a-20a9-4c83-87ab-44a0a69f8c6c" />
+            <input type="hidden" name="from_name" value="Portfolio Website" />
+            <input type="hidden" name="subject" value="New Portfolio Contact Message" />
+            <input type="checkbox" name="botcheck" style="display: none;" />
             <div class="form-group">
               <label for="form-name" class="form-label">Your Name</label>
               <input type="text" id="form-name" name="name" placeholder="John Doe" required autocomplete="name" />

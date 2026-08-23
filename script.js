@@ -286,14 +286,25 @@ if (contactForm) {
     if (btnSpan) btnSpan.textContent = 'Sending…';
 
     try {
-      // Simulate submission — replace with your API endpoint
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      console.log('Form submitted:', { name, email, message });
-      showMessage(`Thanks, ${name}! Your message has been received. I'll get back to you soon.`, 'success');
-      this.reset();
+      const formData = new FormData(this);
+
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        showMessage(`Thanks, ${name}! Your message has been sent successfully. I'll get back to you soon.`, 'success');
+        this.reset();
+      } else {
+        const errorMsg = data.message || 'Something went wrong. Please try again.';
+        showMessage(errorMsg, 'error');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
-      showMessage('Something went wrong. Please email me directly at nagasaibalam@gmail.com', 'error');
+      showMessage('Network error. Please try again or email me directly at nagasaibalam@gmail.com', 'error');
     } finally {
       if (submitBtn) submitBtn.disabled = false;
       if (btnSpan) btnSpan.textContent = originalText;
